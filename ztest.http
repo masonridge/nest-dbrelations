@@ -1,0 +1,54 @@
+###
+POST http://localhost:3000/coffees HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Frapaccino",
+    "brand": "Starbucks",
+    "flavors":["caramel", "chocolate"]
+}
+###
+POST http://localhost:3000/coffees HTTP/1.1
+content-type: application/json
+
+{
+    "name": "ColdBrew",
+    "brand": "Dunkin",
+    "flavors":["cinnmon", "berry"]
+}
+
+###
+POST http://localhost:3000/coffees HTTP/1.1
+content-type: application/json
+
+{
+    "name": "BrewFire",
+    "brand": "Caribou",
+    "flavors":["caramel", "berry"]
+}
+
+###
+GET http://localhost:3000/coffees HTTP/1.1
+
+###
+GET http://localhost:3000/coffees/1 HTTP/1.1
+
+
+###
+PATCH http://localhost:3000/coffees/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Frapuccino",
+    "brand": "Star bucks",
+    "flavors":["berry", "chocolate"]
+}
+
+
+###
+PATCH http://localhost:3000/coffees/1 HTTP/1.1
+content-type: application/json
+
+{
+    "flavors":["chocolate"]
+}

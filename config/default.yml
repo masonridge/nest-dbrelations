@@ -1,0 +1,38 @@
+http:
+  host: 'localhost'
+  port: 8080
+
+db1:
+  postgres:
+    url: 'localhost'
+    port: 5432
+    database: 'yaml-db'
+
+  sqlite:
+    database: 'sqlite.db'
+jwt:
+  secret: SUPER_SECRET
+  audience: localhost:3000
+  issuer: localhost:3000
+  accessTokenTtl: 36000
+  refreshTokenTtl: 864000
+db:
+  # See https://typeorm.io/#/connection-options for database config options
+  global:
+    type: mssql
+    # specify host_name\instance_name
+    host: localhost
+    username: sa
+    password: SD#9136200
+    database: ALBASort
+    extra:
+      trustServerCertificate: true
+    options:
+      useUTC: true
+      # identifies the connection in SQL Profiler, defaults to `node-mssql`
+      appName: dit-api-global
+    # WARNING - do not use in production
+    # setting synchronize to true will alter your database schema
+    synchronize: true
+    # log queries
+    logging: false
