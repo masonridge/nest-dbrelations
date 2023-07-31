@@ -17,4 +17,8 @@ import { Flavor } from '../coffees/entities/flavor.entity';
     }),
   ],
 })
-export class DatabaseModule {}
+export class DatabaseModule {
+  static forFeature() {
+    return TypeOrmModule.forFeature([Coffee, Flavor]);
+  }
+}
