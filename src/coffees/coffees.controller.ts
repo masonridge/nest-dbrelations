@@ -1,7 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseInterceptors,
+} from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
+import { LoggingInterceptor } from '../logging/logging.interceptor';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -17,6 +27,11 @@ export class CoffeesController {
     return this.coffeesService.findAll();
   }
 
+  @Get('/log')
+  @UseInterceptors(LoggingInterceptor)
+  getLog() {
+    return 'Request Logged';
+  }
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.coffeesService.findOne(+id);

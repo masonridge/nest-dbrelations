@@ -52,3 +52,6 @@ content-type: application/json
 {
     "flavors":["chocolate"]
 }
+
+###
+GET http://localhost:3000/coffees/log HTTP/1.1
